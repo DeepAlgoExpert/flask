@@ -14,10 +14,16 @@ app = Flask(__name__)
 CORS(app, resources={r"/tryon": {"origins": "https://oasis3d.netlify.app"}},
           allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods"])
 
-CORS(app, resources={r"/virtual-fit": {"origins": "https://virtualfitting.netlify.app"}},
+CORS(app, resources={r"/virtual-fit": {"origins": "https://vtryandbuy.netlify.app"}},
+          allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods"])
+
+CORS(app, resources={r"/virtual-fit": {"origins": "https://vtryandbuy.netlify.app"}},
           allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods"])
 
 CORS(app, resources={r"/virtual-fit-demo": {"origins": "https://virtualfitting.netlify.app"}},
+          allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods"])
+
+CORS(app, resources={r"/virtual-fit-demo": {"origins": "https://vtryandbuy.netlify.app"}},
           allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods"])
 
 CORS(app, resources={r"/": {"origins": "https://oasis3d.netlify.app"}},
@@ -184,7 +190,7 @@ def try_on_fit():
     
     app.logger.info("subgarment_type: %s", subgarment_type)
 
-    client = Client("http://3.237.33.222:7860/")
+    client = Client("http://3.239.7.20:7860/")
 
     # Test the endpoint by ensuring the input parameters match those expected by the Gradio app
     result = client.predict(
@@ -254,7 +260,7 @@ def try_on_fit_demo():
     
     app.logger.info("subgarment_type: %s", subgarment_type)
 
-    client = Client("http://3.237.33.222:7860/")
+    client = Client("http://44.211.73.129:7860/")
 
     # Test the endpoint by ensuring the input parameters match those expected by the Gradio app
     result = client.predict(
